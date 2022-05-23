@@ -2,8 +2,6 @@
 
 #include <stdio.h>
 
-#define N 100
-
 
 int partition(int arr[], int beg, int end)
 {
@@ -15,30 +13,27 @@ int partition(int arr[], int beg, int end)
         /* code */
         do
         {
-            /* code */
             i++;
         } while (arr[i] < pivot);
         do
         {
-            /* code */
             j--;
         } while (arr[j] > pivot);
 
         // swap
-        //  swap(arr[i], arr[j]);
         int temp4 = arr[i];
         arr[i] = arr[j];
         arr[j] = temp4;
 
         if (i >= j)
         {
-            // swap(arr[i], arr[j]);
-            // swap(arr[beg], arr[j]);
 
+            // swap(arr[i], arr[j]);    //undo last swap when i=j;
             int temp1 = arr[i];
             arr[i] = arr[j];
             arr[j] = temp1;
 
+            // swap(arr[beg], arr[j]);
             int temp2 = arr[beg];
             arr[beg] = arr[j];
             arr[j] = temp2;
