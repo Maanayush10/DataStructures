@@ -5,7 +5,6 @@ using namespace std;
 
 int calcPower(int a, int b)
 {
-    // count++;
     if(b==1)
     {
         return a;
