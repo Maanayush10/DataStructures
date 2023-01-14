@@ -2,7 +2,7 @@
 
 #include<iostream>
 using namespace std;
-int count=0;
+
 int calcPower(int a, int b)
 {
     // count++;
