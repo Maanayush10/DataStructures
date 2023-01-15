@@ -1,4 +1,4 @@
-//Recursive program for calculation 2^n;
+//Recursive program for calculation 2^n in c++;
 
 #include<iostream>
 using namespace std;
