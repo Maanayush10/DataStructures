@@ -1,4 +1,4 @@
-//quickSort Algorithm using Hoare Partition scheme :)
+//quickSort Algorithm using Hoare Partition scheme in C :) 
 
 #include <stdio.h>
 
