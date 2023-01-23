@@ -1,3 +1,5 @@
+//C program to implement Binary Search 
+
 #include <stdio.h>
 #include<stdlib.h>
 
