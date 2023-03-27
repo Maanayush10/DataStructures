@@ -2,6 +2,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//space optimisation
+int fib3(int n)
+{
+    int prev1=1;
+    int prev2=0;
+    if(n==0)
+    {
+        return prev2;
+    }
+    for (int i = 2; i <= n; i++)
+    {
+        /* code */
+        int curr = prev1+ prev2;
+        prev2=prev1;
+        prev1= curr;
+    }
+    return prev1;
+}
+
 //bottom-up approach
 int fib2(int n)
 {
@@ -44,6 +63,7 @@ int main()
     int fibNum = fib(num, dp);
     cout << "The nth fibonacci number is :\t" << fibNum<<endl;
     cout << "The nth fibonacci number is :\t" << fib2(num)<<endl;
+    cout << "The nth fibonacci number is :\t" << fib3(num)<<endl;
 
     return 0;
 }
