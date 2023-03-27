@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//space optimisation
+//space optimisation   t.c--> O(N), s.c--->O(1)
 int fib3(int n)
 {
     int prev1=1;
@@ -21,7 +21,7 @@ int fib3(int n)
     return prev1;
 }
 
-//bottom-up approach
+//bottom-up approach  t.c--> O(N), s.c--->O(N)
 int fib2(int n)
 {
     int dp[n+1];
@@ -35,7 +35,7 @@ int fib2(int n)
     }
     return dp[n];
 }
-//top down apprach
+//top down apprach  t.c--> O(N), s.c--->O(N)+O(N)
 int fib(int n, vector<int> &dp)
 {
     if (n == 0 || n == 1)
