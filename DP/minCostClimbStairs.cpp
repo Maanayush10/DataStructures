@@ -70,8 +70,7 @@ int solve(long long nStairs, int i)
 
     return(solve(nStairs, i+1)+solve(nStairs, i+2));
 }
-
-int solve2(vector<int> &cost, int n)
+int solveNone(vector<int> &cost, int n)
 {
     //base case
     if(n==0)
@@ -85,7 +84,62 @@ int solve2(vector<int> &cost, int n)
     int ans= min(solve2(cost, n-1), solve2(cost, n-2))+ cost[n];
     return ans;
 }
+ //memoization
+    int solve2(vector<int> & cost, int n, vector<int> &dp)
+    {
+        //BASE CASE
+        if(n==0 || n==1)
+        {
+            return cost[n];
+        }
 
+        //STEP 3
+        if(dp[n]!=-1)
+        {
+            return dp[n];
+        }
+
+        //STEP2
+        dp[n]= cost[n]+ min(solve2(cost, n-1, dp), solve2(cost, n-2, dp));
+        return dp[n];
+    }
+
+    //tabulation
+    int solve3(vector<int> &cost, int n)
+    {
+
+        //do array creation
+        vector<int>dp(n+1);
+
+        //BASE CASE
+        dp[0]=cost[0];
+        dp[1]=cost[1];
+        for(int i=2; i<n; i++)
+        {
+            dp[i]= cost[i]+min(dp[i-1],dp[i-2]);
+        }
+        return min(dp[n-1], dp[n-2]);
+    }
+
+
+    //space optimisation
+    int solve4(vector<int> &cost, int n)
+    {
+
+        //do array creation
+        // vector<int>dp(n+1);
+
+        //BASE CASE
+        int prev2=cost[0];
+        int prev1=cost[1];
+        for(int i=2; i<n; i++)
+        {
+            int current= cost[i]+min(prev1,prev2);
+            prev2=prev1;
+            prev1=current;
+        }
+        return min(prev1, prev2);
+    }
 int main(){
     int nStairs;
     // cout<<"Enter the number of stairs :\t";
