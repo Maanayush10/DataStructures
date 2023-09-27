@@ -63,6 +63,18 @@ pair<int, int> firstAndLastPosition(vector<int>& arr, int n, int k)
     p={ind1, ind2};
 
     return p;
+    /*
+    //better code
+    int index= lowerBound(arr, n, k);
+    if(arr[index]!=k || index>=n)
+    {
+        return{-1,-1};
+    }
+    return{index, upperBound(arr, n, k)};
+    
+    
+    
+    */
 }
 
 int main()
