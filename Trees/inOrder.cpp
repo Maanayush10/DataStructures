@@ -11,7 +11,7 @@ void myFunc(TreeNode* root, vector<int>& result)
         result.push_back(root->val);
         myFunc(root->right, result);
     }
-    vector<int> preorderTraversal(TreeNode* root) {
+    vector<int> inorderTraversal(TreeNode* root) {
         vector<int> result;
         myFunc(root,result);
         return result;
