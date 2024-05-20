@@ -47,6 +47,14 @@ Constraints:
 
 */
 //SHOUTOUT TO RAJ VIKRAMADITYA
+
+
+/*
+THE TIME complexity : O(Nodes) + O (2* edges)
+the queue goes till number of nodes, and then all the edges are traversed
+*/
+
+
 class Solution {
   public:
     // Function to return Breadth First Traversal of given graph.
